@@ -1,7 +1,7 @@
 # projeto_livraria_III
 projeto voltado ao framework Laravel, foco será construir um sistema de livraria com funções de CRUD. 
 
-#inicializar o projeto buildando a imagem do dockerfile
+# inicializar o projeto buildando a imagem do dockerfile
 docker-compose build app
 
 # comando para criar os containers 
