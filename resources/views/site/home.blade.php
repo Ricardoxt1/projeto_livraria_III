@@ -1,5 +1,4 @@
 @extends('site.layouts.basic')
-@section('title', $title)
 @section('content')
     @include('site.layouts._partials.navbar')
     <main style="background-color: rgb(178, 206, 239);">

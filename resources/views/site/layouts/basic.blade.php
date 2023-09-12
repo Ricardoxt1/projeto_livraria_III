@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="ricardo" content="conteúdo referente ao sistema de gestão para biblioteca">
     <meta name="generator" content="Hugo 0.104.2">
-    <title></title>
+    <title>Home - Biblioteca Pedbot</title>
     <link rel="shortcut icon" href="{{ asset('img/logoLibraryBg.jpg') }}">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/album-rtl/">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/carousel/">

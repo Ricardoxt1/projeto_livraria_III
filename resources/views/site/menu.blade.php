@@ -19,7 +19,7 @@
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
         <header class="mb-auto">
             <div class="d-flex justify-content-between align-items-center">
-                <img class="bg-light mx-4" src="{{ asset('img/logoLibrary.png}') }}}" width="150" alt="">
+                <img class="bg-light mx-4" src="{{ asset('img/logoLibrary.png') }}" width="150" alt="">
                 <nav class="nav nav-masthead py-4 px-3">
                     <div class="btn-group-vertical " role="group" aria-label="Vertical button group">
                         <div class="pl-3 mb-5">
@@ -80,7 +80,7 @@
         </header>
 
 
-        <main class="px-5">
+        <main class="px-5 mb-5">
             <div class="container w-50">
                 <h2 class="d-inline-flex shadow-lg bg-dark p-3 mx-5 text-white rounded">Sistema de biblioteca Pedbot
                 </h2>
@@ -101,7 +101,7 @@
             </p>
         </main>
 
-        <footer class="mt-auto text-light py-5">
+        <footer class="mt-auto text-light py-2">
             <div class="container">
                 <p class="mb-1">© 2023 Biblioteca Pedbot</p>
             </div>
