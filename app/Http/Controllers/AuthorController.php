@@ -15,6 +15,9 @@ class AuthorController extends Controller
     public function index()
     {
         //
+        return view('app.author.index', [
+            
+        ]);
     }
 
     /**

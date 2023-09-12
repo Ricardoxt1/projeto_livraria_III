@@ -47,8 +47,8 @@
                                 <div class="d-inline align-items-center justify-content-center">
                                     <p class="mb-2">Ainda não é registrado?</p>
 
-                                    <a href="/register"><button type="button"
-                                            class="btn btn-outline-success">Criar conta</button></a>
+                                    <a href="/register"><button type="button" class="btn btn-outline-success">Criar
+                                            conta</button></a>
                                 </div>
 
                             </form>
