@@ -44,6 +44,6 @@ Route::get('/menu',[\App\Http\Controllers\MenuController::class, 'index'])->name
 // Define a route for the 'home' endpoint
 Route::get('/home',[\App\Http\Controllers\HomePageController::class, 'index'])->name('site.home');
 
-Route::get('login', [\App\Http\Controllers\LoginController::class, 'index'])->name('site.login');
+Route::get('/login', [\App\Http\Controllers\LoginController::class, 'index'])->name('site.login');
 
-Route::get('register', [\App\Http\Controllers\RegisterController::class, 'index'])->name('site.register');
+Route::get('/register', [\App\Http\Controllers\RegisterController::class, 'index'])->name('site.register');

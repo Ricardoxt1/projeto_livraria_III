@@ -50,7 +50,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/register/create">
+                <a class="nav-link" href="/customer/create">
                     <span data-feather="file-text" class="align-text-bottom">Cadastrar</span>
                 </a>
             </li>

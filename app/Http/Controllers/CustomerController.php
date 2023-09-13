@@ -15,6 +15,9 @@ class CustomerController extends Controller
     public function index()
     {
         //
+        return view('app.customer.index', [
+            
+        ]);
     }
 
     /**
@@ -25,6 +28,9 @@ class CustomerController extends Controller
     public function create()
     {
         //
+        return view('app.customer.create', [
+            'title' => 'Cadastro de consumidor',
+        ]);
     }
 
     /**

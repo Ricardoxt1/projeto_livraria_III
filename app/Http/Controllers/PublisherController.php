@@ -15,6 +15,9 @@ class PublisherController extends Controller
     public function index()
     {
         //
+        return view('app.publisher.index', [
+            
+        ]);
     }
 
     /**
@@ -25,6 +28,9 @@ class PublisherController extends Controller
     public function create()
     {
         //
+        return view('app.publisher.create', [
+            'title' => 'Cadastro de editora',
+        ]);
     }
 
     /**

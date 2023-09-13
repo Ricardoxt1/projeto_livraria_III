@@ -9,12 +9,15 @@ class RentalController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+     * 
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
         //
+        return view('app.rental.index', [
+            
+        ]);
     }
 
     /**
@@ -25,6 +28,9 @@ class RentalController extends Controller
     public function create()
     {
         //
+        return view('app.rental.create', [
+            'title' => 'Cadastro de aluguel',
+        ]);
     }
 
     /**

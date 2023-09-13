@@ -15,6 +15,9 @@ class EmployeeController extends Controller
     public function index()
     {
         //
+        return view('app.employee.index', [
+            
+        ]);
     }
 
     /**
@@ -25,6 +28,9 @@ class EmployeeController extends Controller
     public function create()
     {
         //
+        return view('app.employee.create', [
+            'title' => 'Cadastro de funcionário(a)',
+        ]);
     }
 
     /**

@@ -1,5 +1,5 @@
-<footer class="text-muted text-center  bg-primary">
+<footer class="text-muted text-center bg-primary">
     <div class="container">
-        <p class="text-white pt-2">© 2023 Biblioteca Pedbot</p>
+        <p class="text-white py-4">© 2023 Biblioteca Pedbot</p>
     </div>
 </footer>

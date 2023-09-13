@@ -1,8 +1,10 @@
+@extends('app.layouts.basic')
+@section('content')
 <main class="col-md-9 ms-sm col-lg-9 px-md-5">
     <div class="pt-3 pb-2 mb-5 text-center">
         <h1 class="h2">Listagem de Alugueis</h1>
     </div>
-    {{ status }}
+    {{-- {{ status }} --}}
     <div class="table-responsive">
         <table class="table table-striped table-ls">
             <thead>
@@ -19,13 +21,13 @@
             <form action='' method='get'>
                 <tbody>
                     <tr>
-                        <input type="hidden" name="id" value="{{ id }}">
-                        <td>{{ costumer }}</td>
-                        <td>{{ titule }}</td>
-                        <td>{{ rental }}</td>
-                        <td>{{ delivery }}</td>
-                        <td>{{ employee }}</td>
-                        <td class="text-center"><a href='{{ URL }}/updateRental/{{ id }}/edit'><svg
+                        <input type="hidden" name="id" value="id ">
+                        <td>costumer </td>
+                        <td>titule </td>
+                        <td>rental </td>
+                        <td>delivery </td>
+                        <td>employee </td>
+                        <td class="text-center"><a href='#'><svg
                                     xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='currentColor'
                                     class='bi bi-pencil-square' viewBox='0 0 16 16'>
                                     <path
@@ -35,7 +37,7 @@
                                 </svg>
                             </a>
                         <td class="text-center">
-                            <a href='{{ URL }}/deleteRental/{{ id }}/delete'>
+                            <a href='#'>
                                 <svg xmlns='http://www.w3.org/2000/svg' width='18' height='18'
                                     fill='currentColor' class='bi bi-trash' viewBox='0 0 16 16'>
                                     <path
@@ -52,3 +54,4 @@
         </table>
     </div>
 </main>
+@endsection

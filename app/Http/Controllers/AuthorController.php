@@ -28,6 +28,9 @@ class AuthorController extends Controller
     public function create()
     {
         //
+        return view('app.author.create', [
+            'title' => 'Cadastro de autor(a)',
+        ]);
     }
 
     /**

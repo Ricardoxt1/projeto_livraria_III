@@ -15,6 +15,9 @@ class BookController extends Controller
     public function index()
     {
         //
+        return view('app.book.index', [
+            
+        ]);
     }
 
     /**
@@ -25,6 +28,9 @@ class BookController extends Controller
     public function create()
     {
         //
+        return view('app.book.create', [
+            'title' => 'Cadastro de livro',
+        ]);
     }
 
     /**
