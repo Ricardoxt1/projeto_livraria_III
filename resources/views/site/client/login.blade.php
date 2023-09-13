@@ -14,7 +14,7 @@
                             </div>
                             {{-- {{alert}}
                         {{status}} --}}
-                            <form class="needs-validatio was-validated" method="post">
+                            <form class="needs-validatio was-validated" action={{ route('site.login')}} method="post">
 
                                 <div class="form-outline my-4">
                                     <label class="form-label is-invalid mt-3" for="form2Example11">Email</label>

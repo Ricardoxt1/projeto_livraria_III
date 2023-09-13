@@ -1,4 +1,5 @@
 <form class="needs-validatio" method="post" id="rentalForm" novalidate="">
+    @csrf
     <div class="row g-3">
         <div class="col-sm-4">
             <label for="validationCustom01">Selecionar o consumidor</label>

@@ -24,9 +24,9 @@
 
                             </div>
 
-                            <form class="row needs-validation d-flex justify-content-center" id="registerForm"
+                            <form class="row needs-validation d-flex justify-content-center" id="registerForm" action={{ route('site.register') }}
                                 method="post">
-
+                                @csrf
                                 <div class="form-outline  col-7">
                                     <label class="form-label  mt-3" for="form2Example11">Nome do
                                         usuario</label>

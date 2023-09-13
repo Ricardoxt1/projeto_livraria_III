@@ -39,7 +39,7 @@
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="/costumer">Usuarios</a></li>
+                                <li><a class="dropdown-item" href="/customer">Usuarios</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>

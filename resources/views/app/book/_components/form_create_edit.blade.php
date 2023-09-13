@@ -1,4 +1,5 @@
  <form class="needs-validation" id="bookForm" method="post" action="" novalidate="">
+     @csrf
      <div class="row g-3">
          <div class="col-sm-6">
              <label for="validationCustom01" class="form-label">Titulo</label>

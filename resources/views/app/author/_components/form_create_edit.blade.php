@@ -1,4 +1,5 @@
 <form class="row g-3 needs-validation my-3" method="post" id="authorForm" novalidate="">
+    @csrf
     <div class="col-md-4">
         <label for="validationCustom01" class="form-label">Nome do autor</label>
         <input type="text" class="form-control" id="validationCustom01" name="name" placeholder="Digite seu nome"
