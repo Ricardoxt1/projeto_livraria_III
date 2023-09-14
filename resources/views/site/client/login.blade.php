@@ -14,12 +14,12 @@
                             </div>
                             {{-- {{alert}}
                         {{status}} --}}
-                            <form class="needs-validatio was-validated" action={{ route('site.login')}} method="post">
-
+                            <form class="needs-validatio was-validated" action={{ route('site.login') }} method="post">
+                                @csrf
                                 <div class="form-outline my-4">
                                     <label class="form-label is-invalid mt-3" for="form2Example11">Email</label>
-                                    <input type="email" id="form2Example11" name="email" class="form-control"
-                                        placeholder="digite nome do usuario" required />
+                                    <input type="email" id="form2Example11" value="{{ old('email') }}" name="email"
+                                        class="form-control" placeholder="digite nome do usuario" required />
                                     <div class="valid-feedback">
                                         Email preenchido!
                                     </div>
@@ -30,27 +30,49 @@
 
                                 <div class="form-outline mb-4">
                                     <label class="form-label is-invalid" for="form2Example22">Senha</label>
-                                    <input type="password" id="form2Example22" name="password" class="form-control"
-                                        placeholder="digite sua senha" required />
-                                    <div class="valid-feedback">
-                                        Senha preenchida!
+                                    <div class="input-group">
+                                        <input type="password" id="form2Example22" value="{{ old('password') }}"
+                                            name="password" class="form-control" aria-describedby="toggleButton"
+                                            placeholder="Digite sua senha" required />
+                                        <button class="btn btn-outline-secondary" type="button" id="toggleButton"><img
+                                                src="{{ asset('img/client/eye.svg') }}" alt="eye" width="20"
+                                                class="text-light"></button>
+                                        <div class="valid-feedback">
+                                            Senha preenchida!
+                                        </div>
                                     </div>
                                     <div class="invalid-feedback">
                                         Por favor, insira a senha do usuario.
                                     </div>
+
+                                    <div class="text-center pt-1 mb-5 pb-1">
+                                        <button class="btn btn-primary btn-md mb-3" type="submit">Entrar</button>
+                                    </div>
+
+                                    <div class="d-inline align-items-center justify-content-center">
+                                        <p class="mb-2">Ainda não é registrado?</p>
+
+                                        <a href="/register"><button type="button" class="btn btn-outline-success">Criar
+                                                conta</button></a>
+                                    </div>
                                 </div>
+                                <script>
+                                    // Função para alternar a visibilidade da senha
+                                    document.getElementById("toggleButton").addEventListener("click", function() {
+                                        const passwordInput = document.getElementById("form2Example22");
+                                        const eyeIcon = this.querySelector("img");
 
-                                <div class="text-center pt-1 mb-5 pb-1">
-                                    <button class="btn btn-primary btn-md mb-3" type="submit">Entrar</button>
-                                </div>
-
-                                <div class="d-inline align-items-center justify-content-center">
-                                    <p class="mb-2">Ainda não é registrado?</p>
-
-                                    <a href="/register"><button type="button" class="btn btn-outline-success">Criar
-                                            conta</button></a>
-                                </div>
-
+                                        if (passwordInput.type === "password") {
+                                            passwordInput.type = "text";
+                                            eyeIcon.classList.remove("bi-eye-slash");
+                                            eyeIcon.classList.add("bi-eye");
+                                        } else {
+                                            passwordInput.type = "password";
+                                            eyeIcon.classList.remove("bi-eye");
+                                            eyeIcon.classList.add("bi-eye-slash");
+                                        }
+                                    });
+                                </script>
                             </form>
 
                         </div>
