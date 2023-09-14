@@ -12,8 +12,12 @@
                                 <img src="{{ asset('img/logoLibrary.png') }}" style="width: 185px;" alt="logo">
                                 <h2 class="mt-1 mb-5 pb-1 ">Biblioteca Pedbot</h2>
                             </div>
-                            {{-- {{alert}}
-                        {{status}} --}}
+                            @if ($erro && $erro !== '')
+                                <div class="alert alert-danger text-center">{{ $erro }}</div>
+                            @elseif ($sucess && $sucess !== '')
+                                <div class="alert alert-success text-center">{{ $sucess }}</div>
+                            @endif
+
                             <form class="needs-validatio was-validated" action={{ route('site.login') }} method="post">
                                 @csrf
                                 <div class="form-outline my-4">

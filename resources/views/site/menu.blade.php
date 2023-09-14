@@ -76,7 +76,9 @@
                     </div>
                 </nav>
             </div>
-
+            @if ($sucess && $sucess != '')
+                <div class="container w-25 alert alert-success text-center">{{ $sucess }}</div>
+            @endif
         </header>
 
 

@@ -22,13 +22,12 @@ class RegisterController extends Controller
      */
     public function create(Request $request, RegisterClient $registerClient)
     {
-        // $registerClient->create($request->all());
         $client = new $registerClient();
         $client->username = $request->username;
         $client->email = $request->email;
         $client->password = Hash::make($request->password);
         $client->save();
 
-        return view('site.client.login');
+        return redirect()->route('site.login', ['sucess' => '1']);
     }
 }
