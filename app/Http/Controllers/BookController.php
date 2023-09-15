@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\Author;
+use App\Models\Library;
+use App\Models\Publisher;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
@@ -22,14 +25,21 @@ class BookController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     *
+     * @param App\Models\Book $book
+     * @param App\Models\Author $author
+     * @param App\Models\Library $library
+     * @param App\Models\Publisher $publisher
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Book $book, Author $author, Library $library, Publisher $publisher)
     {
         //
+        $books = $book->all();
+        $authors = $author->all();
+        $libraries = $library->all();
+        $publishers = $publisher->all();
         return view('app.book.create', [
-            'title' => 'Cadastro de livro',
+            'title' => 'Cadastro de livro', 'books' => $books, 'authors' => $authors, 'libraries' => $libraries, 'publishers' => $publishers
         ]);
     }
 

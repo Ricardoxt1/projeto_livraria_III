@@ -13,7 +13,7 @@ class AuthorController extends Controller
      * @param Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request, Author $author)
+    public function index(Author $author)
     {
         $authors = $author->all();
         return view('app.author.index', [
@@ -27,7 +27,7 @@ class AuthorController extends Controller
      * @param \App\Models\Author $author
      * @return \Illuminate\Http\Response
      */
-    public function create(Author $author, Request $request)
+    public function create()
     {
         //
        

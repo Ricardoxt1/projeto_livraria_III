@@ -7,14 +7,20 @@
 
                 <div class="container">
                     <main>
-                        <div class="py-5 text-center">
-                            <h2>{{ $title }}</h2>
-                        </div>
+                        @if (isset($employees->id))
+                            <div class="py-5 text-center">
+                                <h2>Edição de funcionário</h2>
+                            </div>
+                        @else
+                            <div class="py-5 text-center">
+                                <h2>Cadastro de funcionário</h2>
+                            </div>
+                        @endif
                         <div class="row g-5 px-5 mx-3 py-4">
 
                             <div class="col-md-7 col-lg-12">
                                 <h5 class="mb-3">Registro de dados</h5>
-                                @component('app.employee._components.form_create_edit')
+                                @component('app.employee._components.form_create_edit', ['employees' => $employees, 'libraries' => $libraries])
                                 @endcomponent
                             </div>
                         </div>

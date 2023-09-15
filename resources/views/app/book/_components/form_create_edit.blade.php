@@ -1,6 +1,6 @@
  @if (isset($books->id))
-         @method('PUT')
-     <form class="needs-validation" id="bookForm" method="post" action="{{ route('book', $books->id) }}"
+     @method('PUT')
+     <form class="needs-validation" id="bookForm" method="post" action="{{ route('book.create', $books->id) }}"
          novalidate="">
          @csrf
      @else
@@ -54,8 +54,9 @@
          <select class="form-select" id="validationServer04" name="author_id"
              aria-describedby="validationServer04Feedback" required="">
              <option selected="" disabled="" value="">Escolha...</option>
-             {{-- {{ optionAuthor }} --}}
-             <option value='1'>author->name</option>
+             @foreach ($authors as $author)
+                 <option value='{{ $author->id }}'>{{ $author->name }}</option>
+             @endforeach
          </select>
          <div class="valid-feedback">
              Autor(a) selecionado(a)!
@@ -63,23 +64,26 @@
      </div>
      <div class="col-sm-4 mt-2">
          <label for="validationServer05" class="form-label">Selecionar o livraria</label>
-         <select class="form-select" id="validationServer05" name="library_id"
-             aria-describedby="validationServer05Feedback" required="">
-             <option selected="" disabled="" value="">Escolha...</option>
-             <option value='1'>Livraria Pedbot</option>
-         </select>
+         @foreach ($libraries as $library)
+             <select class="form-select" id="validationServer05" name="library_id"
+                 aria-describedby="validationServer05Feedback" required="">
+                 <option selected="" disabled="" value="">Escolha...</option>
+                 <option value='{{ $library->id }}'>{{ $library->name }}</option>
+             </select>
+         @endforeach
          <div class="valid-feedback">
              Livraria selecionada
          </div>
      </div>
      <div class="col-sm-4 mt-2">
          <label for="validationServer06" class="form-label">Selecionar a editora</label>
-         <select class="form-select" id="validationServer06" name="publisher_id"
-             aria-describedby="validationServer06Feedback" required="">
-             <option selected="" disabled="" value="">Escolha...</option>
-             {{-- {{ optionPublisher }} --}}
-             <option value='1'>publisher->name</option>
-         </select>
+         @foreach ($publishers as $publisher)
+             <select class="form-select" id="validationServer06" name="publisher_id"
+                 aria-describedby="validationServer06Feedback" required="">
+                 <option selected="" disabled="" value="">Escolha...</option>
+                 <option value='{{ $publisher->id }}'>{{ $publisher->name }}</option>
+             </select>
+         @endforeach
          <div class="valid-feedback">
              Editor(a) selecionado(a)
          </div>
@@ -90,6 +94,10 @@
          <div class="valid-feedback">Arquivo selecionado!</div>
      </div>
  </div>
- <button class="w-20 my-4 btn btn-primary btn-ls" type="submit" onclick="submitForm()">Enviar
- </button>
+
+ @if (isset($books->id))
+     <button class="w-20 my-4 btn btn-primary btn-ls" type="submit" onclick="submitForm()">Salvar</button>
+ @else
+     <button class="w-20 my-4 btn btn-primary btn-ls" type="submit" onclick="submitForm()">Cadastrar</button>
+ @endif
  </form>

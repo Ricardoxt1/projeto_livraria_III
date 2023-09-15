@@ -7,9 +7,15 @@
 
                 <div class="container">
                     <main>
-                        <div class="py-5 text-center">
-                            <h2>{{ $title }}</h2>
-                        </div>
+                        @if (isset($customer->id))
+                            <div class="py-5 text-center">
+                                <h2>Editar consumidor</h2>
+                            </div>
+                            @else
+                                <div class="py-5 text-center">
+                                    <h2>{{ $title }}</h2>
+                                </div>
+                        @endif
 
                         <div class="row g-5 px-5 mx-3 py-4">
 

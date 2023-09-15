@@ -12,24 +12,26 @@ class PublisherController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Publisher $publisher)
     {
         //
+        $publishers = $publisher->all();
         return view('app.publisher.index', [
-            
+            'title' => 'Listagem de editoras', 'publishers' => $publishers
         ]);
     }
 
     /**
      * Show the form for creating a new resource.
-     *
+     * @param \App\Models\Publisher  $publisher
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Publisher $publisher)
     {
         //
+        $publishers = $publisher->all();
         return view('app.publisher.create', [
-            'title' => 'Cadastro de editora',
+            'title' => 'Cadastro de editora', 'publishers' => $publishers
         ]);
     }
 
@@ -39,20 +41,23 @@ class PublisherController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Publisher $publisher)
     {
         //
+        $publisher->create($request->all());
+        return redirect()->route('publisher.index');
     }
 
     /**
      * Display the specified resource.
-     *
+     * 
      * @param  \App\Models\Publisher  $publisher
      * @return \Illuminate\Http\Response
      */
     public function show(Publisher $publisher)
     {
         //
+      
     }
 
     /**
