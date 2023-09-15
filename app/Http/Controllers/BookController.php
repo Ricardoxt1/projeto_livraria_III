@@ -9,14 +9,14 @@ class BookController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+     * @param Book $book
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Book $book)
     {
-        //
+        $books = $book->all();
         return view('app.book.index', [
-            
+            'title' => 'Listagem de livros', 'books' => $books
         ]);
     }
 
@@ -35,13 +35,16 @@ class BookController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     *
+     * @param \App\Models\Book $book
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Book $book)
     {
         //
+        $book->create($request->all());
+
+        return redirect()->route('book.index',['books' => $book]);
     }
 
     /**

@@ -23,7 +23,7 @@
                 <nav class="nav nav-masthead py-4 px-3">
                     <div class="btn-group-vertical " role="group" aria-label="Vertical button group">
                         <div class="pl-3 mb-5">
-                            <a href="/logout" class="btn btn-danger">Logout</a>
+                            <a href="/app/logout" class="btn btn-danger">Logout</a>
                         </div>
                         <div class="btn-group dropstart" role="group">
                             <button type="button" class="btn btn-primary dropdown-toggle rounded"
@@ -31,23 +31,23 @@
                                 Listagem
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="/author">Autores</a></li>
+                                <li><a class="dropdown-item" href="/app/author">Autores</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="/book">Livros</a></li>
+                                <li><a class="dropdown-item" href="/app/book">Livros</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="/customer">Usuarios</a></li>
+                                <li><a class="dropdown-item" href="/app/customer">Usuarios</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="/employee">Funcionarios</a></li>
+                                <li><a class="dropdown-item" href="/app/employee">Funcionarios</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="/rental">Alugueis</a></li>
+                                <li><a class="dropdown-item" href="/app/rental">Alugueis</a></li>
                             </ul>
                         </div>
                         <div class="btn-group dropend" role="group">
@@ -58,19 +58,19 @@
                             <ul class="dropdown-menu p-0">
 
                                 <li><span class="text-center dropdown-item active py-3  ">Registre</span></li>
-                                <li><a class="dropdown-item my-2" href="/author/create">Autor</a></li>
+                                <li><a class="dropdown-item my-2" href="/app/author/create">Autor</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="/book/create">Livro</a></li>
+                                <li><a class="dropdown-item" href="/app/book/create">Livro</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="/customer/create">Usuario</a></li>
+                                <li><a class="dropdown-item" href="/app/customer/create">Usuario</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item my-2" href="/author/create">Funcionario</a></li>
+                                <li><a class="dropdown-item my-2" href="/app/author/create">Funcionario</a></li>
                             </ul>
                         </div>
                     </div>
@@ -99,7 +99,7 @@
                     d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5a.5.5 0 0 1 1 0z" />
             </svg>
             <p class="lead">
-                <a href="/home" class="btn btn-md btn-light" tabindex="-1">Ver contéudo</a>
+                <a href="/app/home" class="btn btn-md btn-light" tabindex="-1">Ver contéudo</a>
             </p>
         </main>
 

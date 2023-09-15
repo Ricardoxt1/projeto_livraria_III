@@ -9,29 +9,29 @@
 
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/customer">
+                <a class="nav-link" href="/app/customer">
                     <span data-feather="listCostumers" class="align-text-bottom">Usuarios</span>
                 </a>
 
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/book">
+                <a class="nav-link" href="/app/book">
                     <span data-feather="listBooks" class="align-text-bottom">Livros</span>
                 </a>
 
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/author">
+                <a class="nav-link" href="/app/author">
                     <span data-feather="listAuthors" class="align-text-bottom">Autores</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/publisher">
+                <a class="nav-link" href="/app/publisher">
                     <span data-feather="listPublishers" class="align-text-bottom">Editoras</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/employee">
+                <a class="nav-link" href="/app/employee">
                     <span data-feather="listEmployees" class="align-text-bottom">Funcionário(a)</span>
                 </a>
             </li>
@@ -45,12 +45,12 @@
 
         <ul class="nav flex-column mb-2">
             <li class="nav-item">
-                <a class="nav-link" href="/rental">
+                <a class="nav-link" href="/app/rental">
                     <span name="rentals" class="align-text-bottom">Alugueis</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/customer/create">
+                <a class="nav-link" href="/app/customer/create">
                     <span data-feather="file-text" class="align-text-bottom">Cadastrar</span>
                 </a>
             </li>

@@ -9,39 +9,44 @@ class AuthorController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+     * @param \App\Models\Author $author
+     * @param Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request, Author $author)
     {
-        //
+        $authors = $author->all();
         return view('app.author.index', [
-            
+            'title' => 'Listagem de autores', 'authors' => $authors
         ]);
     }
 
     /**
      * Show the form for creating a new resource.
-     *
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Author $author
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Author $author, Request $request)
     {
         //
+       
         return view('app.author.create', [
-            'title' => 'Cadastro de autor(a)',
+            'title' => 'Cadastro de autores'
         ]);
     }
 
     /**
      * Store a newly created resource in storage.
-     *
+     * @param \App\Models\Author $author
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Author $author)
     {
         //
+        $author->create($request->all());
+        return redirect()->route('author.index');
     }
 
     /**
@@ -61,9 +66,10 @@ class AuthorController extends Controller
      * @param  \App\Models\Author  $author
      * @return \Illuminate\Http\Response
      */
-    public function edit(Author $author)
+    public function edit(Author $author, Request $request)
     {
         //
+        // return view('author.edit', ['title' => 'Editar autor(a)', 'author' => $author, 'request' => $request]);
     }
 
     /**

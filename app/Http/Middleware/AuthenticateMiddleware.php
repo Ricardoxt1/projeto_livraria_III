@@ -16,10 +16,12 @@ class AuthenticateMiddleware
      */
     public function handle(Request $request, Closure $next, $methodAuthenticated)
     {
-        if (false) {
+        session_start();
+
+        if(isset($_SESSION['email']) && $_SESSION['email'] != ''){
             return $next($request);
         } else {
-            return Response('Acesso negado! Middleware Autenticado!');
+            return redirect()->route('site.login', ['erro1' => 1]);
         }
     }
 }

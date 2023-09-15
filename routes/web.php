@@ -36,13 +36,17 @@ Route::middleware('autenticate:padrao')->prefix('/app')->group(function () {
 
     // Define routes for the 'rental' resource
     Route::resource('/rental', RentalController::class);
+    
+    // Define a route for the 'menu' endpoint
+    Route::get('/menu', [\App\Http\Controllers\MenuController::class, 'index'])->name('site.menu');
+
+    // Define a route for the 'logout' endpoint
+    Route::get('/logout', [\App\Http\Controllers\LoginController::class, 'logout'])->name('site.logout');
+    
+    // Define a route for the 'home' endpoint
+    Route::get('/home', [\App\Http\Controllers\HomePageController::class, 'index'])->name('site.home');
 });
 
-// Define a route for the 'menu' endpoint
-Route::get('/menu', [\App\Http\Controllers\MenuController::class, 'index'])->name('site.menu');
-
-// Define a route for the 'home' endpoint
-Route::get('/home', [\App\Http\Controllers\HomePageController::class, 'index'])->name('site.home');
 
 Route::get('/login/{erro?},{sucess?}', [\App\Http\Controllers\LoginController::class, 'index'])->name('site.login');
 Route::post('/login', [\App\Http\Controllers\LoginController::class, 'authenticate'])->name('site.login');

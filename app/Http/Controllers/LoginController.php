@@ -22,7 +22,10 @@ class LoginController extends Controller
             $erro = 'Usuário ou senha não existe';
         } elseif ($sucess = $request->get('sucess')) {
             $sucess = 'Registro realizado com sucesso';
-        } 
+        } elseif ($erro = $request->get('erro1')) {
+            $erro = 'Necessário estar logado para efetuar o acesso!';
+        }
+
 
         return view('site.client.login', ['titulo' => 'Login', 'erro' => $erro, 'sucess' => $sucess]);
     }
@@ -54,12 +57,21 @@ class LoginController extends Controller
         $register = new $registerClient();
         $client = $register->where('email', $email)->first();
 
+
         if ($client && Hash::check($request->input('password'), $client->password)) {
+            session_start();
+            $_SESSION['username'] = $client->username;
+            $_SESSION['email'] = $client->email;
+
             return redirect()->route('site.menu', ['sucess' => '2']);
         } else {
             return redirect()->route('site.login', ['erro' => '1']);
         }
+    }
 
-        
+    public function logout()
+    {
+        session_destroy();
+        return redirect()->route('site.login');
     }
 }
