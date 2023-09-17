@@ -1,8 +1,8 @@
 @if (isset($employees->id))
     <form class="needs-validation" method="post" id="employeeForm" novalidate=""
-        action="{{ route('employee.create', $employees->id) }}">
-        @csrf
+        action="{{ route('employee.update', $employees->id) }}">
         @method('PUT')
+        @csrf
     @else
         <form class="needs-validation" method="post" id="employeeForm" novalidate=""
             action="{{ route('employee.store') }}">
@@ -12,7 +12,7 @@
 
     <div class="col-sm-7">
         <label for="validationCustom01" class="form-label">Nome completo</label>
-        <input type="text" class="form-control" name="name" id="validationCustom01" placeholder="Nome Completo"
+        <input type="text" class="form-control" value="{{ $employees->name ?? old('name') }}" name="name" id="validationCustom01" placeholder="Nome Completo"
             required="">
         <div class="valid-feedback">
             Nome preenchido!
@@ -24,7 +24,7 @@
 
     <div class="col-sm-3">
         <label for="validationCustom02" class="form-label">PIS</label>
-        <input type="number" class="form-control" maxlength="11" name="pis" id="validationCustom02"
+        <input type="number" class="form-control" maxlength="11" value="{{ $employees->pis ?? old('pis') }}" name="pis" id="validationCustom02"
             placeholder="12345678910" required="">
         <div class="valid-feedback">
             PIS preenchido!
@@ -43,7 +43,7 @@
     </div>
     <div class="col-sm-4 mt-2">
         <label for="validationCustom03" class="form-label">Cargo</label>
-        <input type="text" class="form-control" name="office" id="validationCustom03" placeholder="Vendedor"
+        <input type="text" class="form-control" value="{{ $employees->office ?? old('office') }}" name="office" id="validationCustom03" placeholder="Vendedor"
             required="">
         <div class="valid-feedback">
             Cargo preenchido!
@@ -55,7 +55,7 @@
 
     <div class="col-sm-4 mt-2">
         <label for="validationCustom04" class="form-label">Departamento</label>
-        <input type="text" class="form-control" name="departament" id="validationCustom04" placeholder="Vendas"
+        <input type="text" class="form-control" value="{{ $employees->departament ?? old('departament') }}" name="departament" id="validationCustom04" placeholder="Vendas"
             required="">
         <div class="valid-feedback">
             Departamento preenchido!
@@ -71,7 +71,7 @@
             required="">
             <option selected="" disabled="" value="">Escolha...</option>
             @foreach ($libraries as $library)
-                <option value='{{ $library->id }}'>{{ $library->name }}</option>
+                <option value="{{ $library->id }}" {{ $employees->library_id ?? old('library_id') == $library->id ? 'selected' : '' }}>{{ $library->name }}</option>
             @endforeach
         </select>
         <div class="valid-feedback">
@@ -83,7 +83,7 @@
     </div>
 </div>
 @if (isset($employees->id))
-    <button class="w-20 my-4 btn btn-primary btn-ls" type="submit">Editar</button>
+    <button class="w-20 my-4 btn btn-success btn-ls" type="submit">Editar</button>
 @else
     <button class="w-20 my-4 btn btn-primary btn-ls" type="submit">Cadastrar</button>
 @endif

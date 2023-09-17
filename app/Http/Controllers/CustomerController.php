@@ -16,7 +16,7 @@ class CustomerController extends Controller
     {
         $customers = $customer->all();
         return view('app.customer.index', [
-            'title' => 'Listagem de consumidores', 'customers' => $customers
+            'title' => 'Listagem de usuario', 'customers' => $customers
         ]);
     }
 
@@ -24,11 +24,11 @@ class CustomerController extends Controller
      * Show the form for creating a new resource.
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Customer $customer)
     {
         //
         return view('app.customer.create', [
-            'title' => 'Cadastro de consumidor',
+            'title' => 'Cadastro de usuario', 'customer' => $customer
         ]);
     }
 
@@ -58,18 +58,20 @@ class CustomerController extends Controller
 
     /**
      * Show the form for editing the specified resource.
-     *
      * @param  \App\Models\Customer  $customer
      * @return \Illuminate\Http\Response
      */
     public function edit(Customer $customer)
     {
         //
+
+        return view('app.customer.create', [
+            'title' => 'Editar usuario', 'customer' => $customer
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
-     *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Customer  $customer
      * @return \Illuminate\Http\Response
@@ -77,6 +79,8 @@ class CustomerController extends Controller
     public function update(Request $request, Customer $customer)
     {
         //
+        $customer->update($request->all());
+        return redirect()->route('customer.index', ['customers' => $customer]);
     }
 
     /**

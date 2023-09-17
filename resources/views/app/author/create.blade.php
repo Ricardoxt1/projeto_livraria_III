@@ -14,7 +14,7 @@
 
                             <div class="col-md-7 col-lg-12">
                                 <h5 class="mb-3">Informações revelantes sobre o autor</h5>
-                                @component('app.author._components.form_create_edit')
+                                @component('app.author._components.form_create_edit', ['authors' => $author])
                                 @endcomponent
                             </div>
                         </div>

@@ -25,7 +25,6 @@ return new class extends Migration
 
             //constrants
             $table->foreign('library_id')->references('id')->on('library');
-            $table->unique('library_id');
         });
     }
 

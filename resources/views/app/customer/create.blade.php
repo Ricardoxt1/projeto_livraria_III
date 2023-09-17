@@ -9,19 +9,19 @@
                     <main>
                         @if (isset($customer->id))
                             <div class="py-5 text-center">
-                                <h2>Editar consumidor</h2>
+                                <h2>{{ $title }}</h2>
                             </div>
-                            @else
-                                <div class="py-5 text-center">
-                                    <h2>{{ $title }}</h2>
-                                </div>
+                        @else
+                            <div class="py-5 text-center">
+                                <h2>{{ $title }}</h2>
+                            </div>
                         @endif
 
                         <div class="row g-5 px-5 mx-3 py-4">
 
                             <div class="col-md-7 col-lg-12">
                                 <h5 class="mb-3">Registro dados pessoais</h5>
-                                @component('app.customer._components.form_create_edit')
+                                @component('app.customer._components.form_create_edit', ['customer' => $customer])
                                 @endcomponent
                             </div>
                         </div>

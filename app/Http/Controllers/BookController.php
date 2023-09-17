@@ -34,12 +34,11 @@ class BookController extends Controller
     public function create(Book $book, Author $author, Library $library, Publisher $publisher)
     {
         //
-        $books = $book->all();
         $authors = $author->all();
         $libraries = $library->all();
-        $publishers = $publisher->all();
+        $publisher = $publisher->all();
         return view('app.book.create', [
-            'title' => 'Cadastro de livro', 'books' => $books, 'authors' => $authors, 'libraries' => $libraries, 'publishers' => $publishers
+            'title' => 'Adicionar livro', 'book' => $book, 'authors' => $authors, 'libraries' => $libraries, 'publishers' => $publisher
         ]);
     }
 
@@ -54,7 +53,7 @@ class BookController extends Controller
         //
         $book->create($request->all());
 
-        return redirect()->route('book.index',['books' => $book]);
+        return redirect()->route('book.index', ['books' => $book]);
     }
 
     /**
@@ -70,13 +69,22 @@ class BookController extends Controller
 
     /**
      * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Book  $book
+     * @param App\Models\Book $book
+     * @param App\Models\Author $author
+     * @param App\Models\Library $library
+     * @param App\Models\Publisher $publisher
      * @return \Illuminate\Http\Response
      */
-    public function edit(Book $book)
+    public function edit(Book $book, Author $author, Library $library, Publisher $publisher)
     {
         //
+       
+        $authors = $author->all();
+        $libraries = $library->all();
+        $publishers = $publisher->all();
+        return view('app.book.create', [
+            'title' => 'Editar livro', 'book' => $book, 'authors' => $authors, 'libraries' => $libraries, 'publishers' => $publishers
+        ]);
     }
 
     /**
@@ -89,6 +97,8 @@ class BookController extends Controller
     public function update(Request $request, Book $book)
     {
         //
+        $book->update($request->all());
+        return redirect()->route('book.index', ['books' => $book]);
     }
 
     /**
@@ -100,5 +110,7 @@ class BookController extends Controller
     public function destroy(Book $book)
     {
         //
+        $book->delete();
+        return redirect()->route('book.index');
     }
 }

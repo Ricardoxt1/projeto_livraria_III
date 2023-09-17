@@ -17,7 +17,13 @@
 
                             <div class="col-md-7 col-lg-12">
                                 <h5 class="mb-4">Registro sobre o aluguel</h5>
-                                @component('app.rental._components.form_create_edit')
+                                @component('app.rental._components.form_create_edit', [
+                                    'rentals' => $rental,
+                                    'books' => $books,
+                                    'customers' => $customers,
+                                    'employees' => $employees,
+                                    'employees' => $employees,
+                                ])
                                 @endcomponent
                             </div>
                         </div>

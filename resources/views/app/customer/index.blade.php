@@ -2,7 +2,7 @@
 @section('content')
     <main class="col-md-9 ms-sm col-lg-8 px-md-5">
         <div class="text-center pt-3 pb-2 mb-5">
-            <h1 class="h2">Listagem de Usuarios</h1>
+            <h1 class="h2">{{ $title }}</h1>
         </div>
         {{-- {{ status }} --}}
         <div class="table-responsive">
@@ -32,7 +32,7 @@
                                 <td name="address">{{ $customer->address }}</td>
 
                                 <td class="text-center ">
-                                    <a href="{{ route('customer.create', $customer->id) }}"><svg
+                                    <a href="{{ route('customer.edit', $customer->id) }}"><svg
                                             xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                                             fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                             <path

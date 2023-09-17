@@ -11,14 +11,16 @@ class EmployeeController extends Controller
     /**
      * Display a listing of the resource.
      * @param App\Models\Employee $employee
+     * @param App\Models\Library $library
      * @return \Illuminate\Http\Response
      */
-    public function index(Employee $employee)
+    public function index(Employee $employee, Library $library)
     {
         //
         $employees = $employee->all();
+        $libraries = $library->all();
         return view('app.employee.index', [
-            'title' => 'Listagem de funcionários(a)', 'employees' => $employees
+            'title' => 'Listagem de funcionários(a)', 'employees' => $employees, 'libraries' => $libraries
         ]);
     }
 
@@ -31,10 +33,9 @@ class EmployeeController extends Controller
     public function create(Employee $employee, Library $library)
     {
         //
-        $employees = $employee->all();
         $libraries = $library->all();
         return view('app.employee.create', [
-            'title' => 'Cadastro de funcionário(a)', 'employees' => $employees, 'libraries' => $libraries
+            'title' => 'Cadastro de funcionário(a)', 'employee' => $employee, 'libraries' => $libraries
         ]);
     }
 
@@ -64,13 +65,17 @@ class EmployeeController extends Controller
 
     /**
      * Show the form for editing the specified resource.
-     *
+     * @param  \App\Models\Library  $library
      * @param  \App\Models\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function edit(Employee $employee)
+    public function edit(Employee $employee, Library $library)
     {
         //
+        $libraries = $library->all();
+        return view('app.employee.create', [
+            'title' => 'Editar funcionário(a)', 'employee' => $employee, 'libraries' => $libraries
+        ]);
     }
 
     /**
@@ -83,6 +88,8 @@ class EmployeeController extends Controller
     public function update(Request $request, Employee $employee)
     {
         //
+        $employee->update($request->all());
+        return redirect()->route('employee.index', ['employees' => $employee]);
     }
 
     /**
@@ -94,5 +101,7 @@ class EmployeeController extends Controller
     public function destroy(Employee $employee)
     {
         //
+        $employee->delete();
+        return redirect()->route('employee.index');
     }
 }

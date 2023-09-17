@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
+    <title>Gerenciamento Pedbot</title>
 
     <link rel="shortcut icon" href="{{asset('img/logoLibraryBg.jpg')}}">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/dashboard/">

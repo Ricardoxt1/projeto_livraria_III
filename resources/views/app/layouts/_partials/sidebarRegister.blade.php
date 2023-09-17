@@ -8,8 +8,8 @@
                 </h6>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/app/author/create">
-                    <span data-feather="registerAuthor" class="align-text-bottom">Autores</span>
+                <a class="nav-link" href="/app/customer/create">
+                    <span data-feather="registerCostumer" class="align-text-bottom">Usuarios</span>
 
                 </a>
             </li>
@@ -20,14 +20,8 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/app/customer/create">
-                    <span data-feather="registerCostumer" class="align-text-bottom">Usuarios</span>
-
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/app/employee/create">
-                    <span data-feather="registerEmployee" class="align-text-bottom">Funcionário(a)</span>
+                <a class="nav-link" href="/app/author/create">
+                    <span data-feather="registerAuthor" class="align-text-bottom">Autores</span>
 
                 </a>
             </li>
@@ -37,7 +31,13 @@
 
                 </a>
             </li>
-            
+            <li class="nav-item">
+                <a class="nav-link" href="/app/employee/create">
+                    <span data-feather="registerEmployee" class="align-text-bottom">Funcionário(a)</span>
+
+                </a>
+            </li>
+
             <h6
                 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">
                 <span>Opções</span>

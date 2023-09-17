@@ -10,7 +10,6 @@ class AuthorController extends Controller
     /**
      * Display a listing of the resource.
      * @param \App\Models\Author $author
-     * @param Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function index(Author $author)
@@ -23,16 +22,14 @@ class AuthorController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     * @param \Illuminate\Http\Request $request
      * @param \App\Models\Author $author
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Author $author)
     {
         //
-       
         return view('app.author.create', [
-            'title' => 'Cadastro de autores'
+            'title' => 'Cadastro de autores', 'author' => $author
         ]);
     }
 
@@ -69,7 +66,8 @@ class AuthorController extends Controller
     public function edit(Author $author, Request $request)
     {
         //
-        // return view('author.edit', ['title' => 'Editar autor(a)', 'author' => $author, 'request' => $request]);
+        
+        return view('app.author.create', ['title' => 'Editar autor(a)', 'author' => $author, 'request' => $request]);
     }
 
     /**
@@ -82,6 +80,8 @@ class AuthorController extends Controller
     public function update(Request $request, Author $author)
     {
         //
+        $author->update($request->all());
+        return redirect()->route('author.index', ['authors' => $author]);
     }
 
     /**
@@ -93,5 +93,8 @@ class AuthorController extends Controller
     public function destroy(Author $author)
     {
         //
+        $author->delete();
+        dd($author);
+        return redirect()->route('author.index');
     }
 }

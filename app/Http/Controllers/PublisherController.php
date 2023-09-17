@@ -29,9 +29,8 @@ class PublisherController extends Controller
     public function create(Publisher $publisher)
     {
         //
-        $publishers = $publisher->all();
         return view('app.publisher.create', [
-            'title' => 'Cadastro de editora', 'publishers' => $publishers
+            'title' => 'Cadastro de editora', 'publisher' => $publisher
         ]);
     }
 
@@ -69,6 +68,9 @@ class PublisherController extends Controller
     public function edit(Publisher $publisher)
     {
         //
+        return view('app.publisher.create', [
+            'title' => 'Editar editora', 'publisher' => $publisher
+        ]);
     }
 
     /**
@@ -81,6 +83,8 @@ class PublisherController extends Controller
     public function update(Request $request, Publisher $publisher)
     {
         //
+        $publisher->update($request->all());
+        return redirect()->route('publisher.index', ['publishers' => $publisher]);
     }
 
     /**
@@ -92,5 +96,7 @@ class PublisherController extends Controller
     public function destroy(Publisher $publisher)
     {
         //
+        $publisher->delete();
+        return redirect()->route('publisher.index');
     }
 }

@@ -2,7 +2,11 @@
 @section('content')
     <main class="col-md-9 ms-sm col-lg-6 px-md-5">
         <div class="pt-3 pb-2 mb-5 text-center">
-            <h1 class="h2">{{ $title }}</h1>
+            @if (isset($authors->id))
+                <h1 class="h2">Editar Autor</h1>
+            @else
+                <h1 class="h2">Adicionar Autor</h1>
+            @endif
         </div>
         {{-- {{status}} --}}
         <div class="table-responsive ">
@@ -21,7 +25,7 @@
                                 <input type="hidden" name="id" value="{{ $author->id }}" id="id" />
                                 <td name="name_authors">{{ $author->name }}</td>
 
-                                <td class="text-center"><a href="{{ route('author.create', $author->id) }}"><svg
+                                <td class="text-center"><a href="{{ route('author.edit', $author->id) }}"><svg
                                             xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                                             fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                             <path
@@ -31,16 +35,23 @@
                                         </svg>
                                     </a>
 
-                                <td class="text-center"> <a href="#"><svg xmlns="http://www.w3.org/2000/svg"
-                                            width="18" height="18" fill="currentColor" class="bi bi-trash"
-                                            viewBox="0 0 16 16">
-                                            <path
-                                                d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z" />
-                                            <path
-                                                d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z" />
-                                        </svg> </a>
-
                                 </td>
+                                <td class="text-center">
+                                    <form id="form_{{ $author->id }}" action="{{ route('author.destroy', $author->id) }}"
+                                        method="post">
+                                        @method('DELETE')
+                                        @csrf
+                                        <a href="#"
+                                            onclick="document.getElementById('form_{{ $author->id }}').submit()">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                                fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z" />
+                                                <path
+                                                    d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z" />
+                                            </svg>
+                                        </a>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach
