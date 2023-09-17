@@ -22,6 +22,7 @@ class CustomerController extends Controller
 
     /**
      * Show the form for creating a new resource.
+     * @param \App\Models\Customer $customer
      * @return \Illuminate\Http\Response
      */
     public function create(Customer $customer)

@@ -25,7 +25,7 @@ class RentalController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new rental.
      * @param \App\Models\Rental $rental
      * @param \App\Models\Book $book
      * @param \App\Models\Customer $customer
@@ -58,15 +58,12 @@ class RentalController extends Controller
 
     /**
      * Display the specified resource.
-     * @param \Illuminate\Http\Request  $request
      * @param  \App\Models\Rental  $rental
      * @return \Illuminate\Http\Response
      */
-    public function show(Rental $rental, Request $request)
+    public function show(Rental $rental)
     {
         //
-        // $rental->create($request->all());
-        // return redirect()->route('rental.index', ['rentals' => $rental]);
     }
 
     /**

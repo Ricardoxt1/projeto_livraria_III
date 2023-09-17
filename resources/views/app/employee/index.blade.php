@@ -44,7 +44,7 @@
                                         action="{{ route('employee.destroy', $employee->id) }}">
                                         @method('DELETE')
                                         @csrf
-                                        <a href=""
+                                        <a href="#"
                                             onclick="document.getElementById('form_{{ $employee->id }}').submit()">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                                                 fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">

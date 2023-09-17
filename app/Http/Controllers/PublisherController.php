@@ -9,7 +9,7 @@ class PublisherController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+     * @param \App\Models\Publisher $publisher
      * @return \Illuminate\Http\Response
      */
     public function index(Publisher $publisher)
@@ -36,7 +36,7 @@ class PublisherController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     *
+     * @param \App\Models\Publisher $publisher
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */

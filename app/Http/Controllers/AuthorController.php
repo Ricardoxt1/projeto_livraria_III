@@ -94,7 +94,6 @@ class AuthorController extends Controller
     {
         //
         $author->delete();
-        dd($author);
         return redirect()->route('author.index');
     }
 }
