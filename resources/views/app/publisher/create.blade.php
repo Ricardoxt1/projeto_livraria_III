@@ -14,7 +14,7 @@
 
                             <div class="col-md-7 col-lg-12">
                                 <h5 class="mb-3">Informações revelantes sobre a editora</h5>
-                                @component('app.publisher._components.form_create_edit', ['publishers' => $publisher])
+                                @component('app.publisher._components.formCreateEdit', ['publishers' => $publisher])
                                 @endcomponent
                             </div>
                         </div>

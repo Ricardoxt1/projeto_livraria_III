@@ -16,7 +16,7 @@
 
                             <div class="col-md-7 col-lg-12">
                                 <h5 class="mb-3">Registro de dados</h5>
-                                @component('app.employee._components.form_create_edit', ['employees' => $employee, 'libraries' => $libraries])
+                                @component('app.employee._components.formCreateEdit', ['employees' => $employee, 'libraries' => $libraries])
                                 @endcomponent
                             </div>
                         </div>

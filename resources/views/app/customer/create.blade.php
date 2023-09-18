@@ -21,7 +21,7 @@
 
                             <div class="col-md-7 col-lg-12">
                                 <h5 class="mb-3">Registro dados pessoais</h5>
-                                @component('app.customer._components.form_create_edit', ['customer' => $customer])
+                                @component('app.customer._components.formCreateEdit', ['customer' => $customer])
                                 @endcomponent
                             </div>
                         </div>

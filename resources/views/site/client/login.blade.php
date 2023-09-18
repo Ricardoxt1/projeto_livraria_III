@@ -1,4 +1,4 @@
-@extends('site.layouts.basic_client')
+@extends('site.layouts.basicClient')
 @section('content')
     <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-xl-12">
