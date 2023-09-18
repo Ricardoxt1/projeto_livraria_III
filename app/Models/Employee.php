@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Employee extends Model
 {
@@ -13,10 +14,10 @@ class Employee extends Model
 
     /**
      * Retrieve the library where this employee is located.
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
     public function library()
     {
-        return $this->belongsTo('App\Models\Library');
+        return $this->belongsTo(Library::class);
     }
 }

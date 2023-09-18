@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Book extends Model
 {
@@ -13,28 +14,28 @@ class Book extends Model
 
     /**
      * Retrieve the author of this book.
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
     public function author()
     {
-        return $this->belongsTo('App\Models\Author');
+        return $this->belongsTo(Author::class);
     }
 
     /**
      * Retrieve the publisher of this book.
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
     public function publisher()
     {
-        return $this->belongsTo('App\Models\Publisher');
+        return $this->belongsTo(Publisher::class);
     }
 
     /**
      * Retrieve the library where this book is located.
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
     public function library()
     {
-        return $this->belongsTo('App\Models\Library');
+        return $this->belongsTo(Library::class);
     }
 }
