@@ -4,14 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Models\RegisterClient;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
-    //
     /**
      * @param Request $request
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index(Request $request)
     {
@@ -26,7 +27,6 @@ class LoginController extends Controller
             $erro = 'Necessário estar logado para efetuar o acesso!';
         }
 
-
         return view('site.client.login', ['titulo' => 'Login', 'erro' => $erro, 'sucess' => $sucess]);
     }
 
@@ -35,7 +35,7 @@ class LoginController extends Controller
      *
      * @param Request $request The request object containing user input.
      * @param RegisterClient $registerClient The register client used to query the user data.
-     * @return \Illuminate\Http\RedirectResponse Redirects the user to a specific route based on the authentication result.
+     * @return RedirectResponse Redirects the user to a specific route based on the authentication result.
      */
     public function authenticate(Request $request, RegisterClient $registerClient)
     {
@@ -69,9 +69,15 @@ class LoginController extends Controller
         }
     }
 
+    /**
+     * Log out the user.
+     *
+     * @return RedirectResponse
+     */
     public function logout()
     {
         session_destroy();
+
         return redirect()->route('site.login');
     }
 }

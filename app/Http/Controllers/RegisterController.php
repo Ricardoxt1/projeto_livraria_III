@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use \Illuminate\Http\Response;
 use App\Models\RegisterClient;
 
 class RegisterController extends Controller
@@ -11,7 +12,7 @@ class RegisterController extends Controller
     //
     /**
      * Display a listing of the resource.
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index()
     {
@@ -20,9 +21,9 @@ class RegisterController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     * @param  \Illuminate\Http\Request  $request
-     * @param \App\Models\RegisterClient $registerClient
-     * @return \Illuminate\Http\Response
+     * @param Request  $request
+     * @param RegisterClient $registerClient
+     * @return Response
      */
     public function create(Request $request, RegisterClient $registerClient)
     {

@@ -18,6 +18,9 @@ class MenuController extends Controller
             $sucess = 'Login realizado com sucesso!';
         }
 
+        // Check if the success parameter exists in the request and assign the appropriate message
+        $request->has('success') ? 'Login realizado com sucesso!' : '';
+
         return view('site.menu', ['sucess' => $sucess]);
     }
 }

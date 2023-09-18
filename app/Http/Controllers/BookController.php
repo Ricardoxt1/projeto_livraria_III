@@ -7,13 +7,14 @@ use App\Models\Author;
 use App\Models\Library;
 use App\Models\Publisher;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class BookController extends Controller
 {
     /**
      * Display a listing of the resource.
      * @param Book $book
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index(Book $book)
     {
@@ -25,15 +26,14 @@ class BookController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     * @param App\Models\Book $book
-     * @param App\Models\Author $author
-     * @param App\Models\Library $library
-     * @param App\Models\Publisher $publisher
-     * @return \Illuminate\Http\Response
+     * @param Book $book
+     * @param Author $author
+     * @param Library $library
+     * @param Publisher $publisher
+     * @return Response
      */
     public function create(Book $book, Author $author, Library $library, Publisher $publisher)
     {
-        //
         $authors = $author->all();
         $libraries = $library->all();
         $publisher = $publisher->all();
@@ -44,41 +44,26 @@ class BookController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     * @param \App\Models\Book $book
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Book $book
+     * @param Request  $request
+     * @return Response
      */
     public function store(Request $request, Book $book)
     {
-        //
         $book->create($request->all());
-
         return redirect()->route('book.index', ['books' => $book]);
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Book  $book
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Book $book)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
-     * @param App\Models\Book $book
-     * @param App\Models\Author $author
-     * @param App\Models\Library $library
-     * @param App\Models\Publisher $publisher
-     * @return \Illuminate\Http\Response
+     * @param Book $book
+     * @param Author $author
+     * @param Library $library
+     * @param Publisher $publisher
+     * @return Response
      */
     public function edit(Book $book, Author $author, Library $library, Publisher $publisher)
     {
-        //
-       
         $authors = $author->all();
         $libraries = $library->all();
         $publishers = $publisher->all();
@@ -90,13 +75,12 @@ class BookController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Book  $book
-     * @return \Illuminate\Http\Response
+     * @param Request  $request
+     * @param Book  $book
+     * @return Response
      */
     public function update(Request $request, Book $book)
     {
-        //
         $book->update($request->all());
         return redirect()->route('book.index', ['books' => $book]);
     }
@@ -104,12 +88,11 @@ class BookController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Book  $book
-     * @return \Illuminate\Http\Response
+     * @param Book  $book
+     * @return Response
      */
     public function destroy(Book $book)
     {
-        //
         $book->delete();
         return redirect()->route('book.index');
     }
